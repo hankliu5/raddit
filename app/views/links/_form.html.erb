@@ -1,23 +1,10 @@
-<%= form_for(@link) do |f| %>
-  <% if @link.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
-
-      <ul>
-      <% @link.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for @link do |f| %>
 
   <div class="form-group">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= f.input :title, input_html: { class: "form-control"} %>
   </div>
   <div class="form-group">
-    <%= f.label :url %><br>
-    <%= f.text_field :url, class: "form-control" %>
+    <%= f.input :url, input_html: { class: "form-control"} %>
   </div>
   <br>
   <div class="form-group">
